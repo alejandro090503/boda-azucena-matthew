@@ -24,6 +24,18 @@
 <style>
 /* ── VARIABLES ── */
 :root{
+
+  --peach:#F5C8B0;
+  --peach-dark:#D4906A;
+  --sky:#A8C8E8;
+  --sky-dark:#5A8FB0;
+  --lavender:#C8B8DC;
+  --lavender-dark:#8B6EAA;
+  --sage:#AACAAA;
+  --sage-dark:#5A8A5A;
+  --rose:#CFA0B2;
+  --rose-dark:#9A6070;
+
   --bg:#FAF8F5;
   --accent:#CFA0B2;
   --dark:#9A6070;
@@ -1013,6 +1025,233 @@ body{
   box-shadow:0 4px 14px rgba(154,96,112,.4);
   z-index:2;
 }
+
+/* ── INTRO SCREEN (sin video/sobre) ── */
+#envelope-screen{display:none !important}
+#env-flash{display:none !important}
+
+#intro-screen{
+  position:fixed;inset:0;z-index:9100;
+  background:linear-gradient(160deg,#FAF8F5 0%,#F8EFF0 30%,#F0EAF5 60%,#F0F4F8 85%,#FAF8F5 100%);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;cursor:pointer;
+}
+.is-corner{position:absolute;pointer-events:none;opacity:0}
+.is-corner--tl{top:0;left:0;transform:rotate(0deg)}
+.is-corner--tr{top:0;right:0;transform:rotate(90deg)}
+.is-corner--bl{bottom:0;left:0;transform:rotate(-90deg)}
+.is-corner--br{bottom:0;right:0;transform:rotate(180deg)}
+.is-center{
+  display:flex;flex-direction:column;
+  align-items:center;gap:6px;
+  text-align:center;
+  position:relative;z-index:2;
+  padding:0 32px;
+}
+.is-tag{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:12px;letter-spacing:7px;text-transform:uppercase;
+  color:var(--rose);opacity:0;margin-bottom:4px;
+}
+.is-mono{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(88px,24vw,118px);line-height:1;
+  background:linear-gradient(135deg,var(--rose-dark) 0%,var(--rose) 30%,var(--lavender-dark) 60%,var(--rose-dark) 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  opacity:0;transform:translateY(22px);
+}
+.is-line{
+  display:flex;align-items:center;gap:10px;
+  opacity:0;margin:4px 0;
+}
+.is-line-rule{
+  width:32px;height:1px;
+  background:linear-gradient(to right,transparent,var(--rose));
+}
+.is-line-rule--r{background:linear-gradient(to left,transparent,var(--rose))}
+.is-line-dot{
+  width:5px;height:5px;border-radius:50%;
+  background:var(--rose);opacity:.7;
+}
+.is-names{
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:20px;letter-spacing:3px;
+  color:var(--rose-dark);opacity:0;
+}
+.is-date{
+  font-family:'Cormorant Garamond',serif;
+  font-size:13px;letter-spacing:5px;text-transform:uppercase;
+  color:var(--rose);opacity:0;margin-top:2px;
+}
+.is-tap{
+  margin-top:22px;opacity:0;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:15px;letter-spacing:5px;text-transform:uppercase;
+  color:var(--rose-dark);
+  padding:15px 38px;
+  border:1.5px solid rgba(154,96,112,.5);
+  border-radius:50px;
+  background:rgba(255,255,255,.35);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  position:relative;
+  white-space:nowrap;
+}
+.is-tap::before{
+  content:'';position:absolute;inset:0;
+  border:1.5px solid rgba(154,96,112,.35);border-radius:50px;
+  animation:istappulse 2.2s ease-out infinite;
+}
+@keyframes istappulse{
+  0%{transform:scale(1);opacity:.7}
+  100%{transform:scale(1.3);opacity:0}
+}
+/* Subtle shimmer strip */
+.is-shimmer{
+  position:absolute;
+  top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.45) 50%,transparent 60%);
+  animation:shimmer 3.6s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes shimmer{
+  0%{left:-100%}
+  60%,100%{left:130%}
+}
+
+/* ══ MULTI-COLOR PALETTE INTEGRATION ══ */
+
+/* Countdown boxes - each a different pastel */
+.cd-box:nth-child(1){border-top:3px solid var(--rose);background:linear-gradient(180deg,rgba(207,160,178,.08) 0%,#fff 100%)}
+.cd-box:nth-child(2){border-top:3px solid var(--peach-dark);background:linear-gradient(180deg,rgba(245,200,176,.1) 0%,#fff 100%)}
+.cd-box:nth-child(3){border-top:3px solid var(--sky-dark);background:linear-gradient(180deg,rgba(168,200,232,.1) 0%,#fff 100%)}
+.cd-box:nth-child(4){border-top:3px solid var(--lavender-dark);background:linear-gradient(180deg,rgba(200,184,220,.1) 0%,#fff 100%)}
+.cd-num:nth-child(1){color:var(--rose-dark)}
+
+/* Itinerary dots - alternating colors */
+.itin-dot:nth-child(odd){background:var(--rose);box-shadow:0 0 0 2px var(--rose)}
+.itin-dot:nth-child(even){background:var(--sky-dark);box-shadow:0 0 0 2px var(--sky-dark)}
+.itin-dot:nth-child(3n){background:var(--peach-dark);box-shadow:0 0 0 2px var(--peach-dark)}
+.itin-dot:nth-child(4n){background:var(--lavender-dark);box-shadow:0 0 0 2px var(--lavender-dark)}
+.itin-dot:nth-child(5n){background:var(--sage-dark);box-shadow:0 0 0 2px var(--sage-dark)}
+.itin-spine{background:linear-gradient(to bottom,transparent,var(--rose) 20%,var(--sky-dark) 50%,var(--lavender-dark) 80%,transparent)}
+
+/* Quote section - lavender tint */
+#quote{background:linear-gradient(160deg,#FAF8F5 0%,#F0EAF5 50%,#FAF8F5 100%)}
+.quote-sig{background:linear-gradient(135deg,var(--rose-dark),var(--lavender-dark));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* Fecha - peach accent */
+.fecha-label{color:var(--peach-dark)}
+.fecha-main{color:var(--rose-dark)}
+.fecha-rule--l{background:linear-gradient(to right,transparent,var(--peach-dark))}
+.fecha-rule--r{background:linear-gradient(to left,transparent,var(--peach-dark))}
+.fecha-vline{background:linear-gradient(to bottom,transparent,var(--peach-dark),transparent)}
+
+/* Countdown section - sky tint */
+#countdown{background:linear-gradient(to bottom,var(--bg) 0%,#EEF4F8 14%,#EEF4F8 100%)}
+.cd-lbl{color:var(--sky-dark)}
+
+/* Location card - sage accent */
+.loc-sub{color:var(--sage-dark)}
+.loc-city{color:var(--sage-dark)}
+
+/* Music fab - multi-color gradient */
+.music-fab{background:linear-gradient(135deg,var(--rose),var(--lavender-dark))}
+.music-fab::after{background:linear-gradient(135deg,var(--rose),var(--lavender-dark))}
+
+/* Familiares - lavender surface */
+#familiares{background:linear-gradient(160deg,#FAF8F5 0%,#F0EAF5 40%,#FAF8F5 100%)}
+.fam-side-lbl{color:var(--lavender-dark)}
+.fam-vdivider{background:linear-gradient(to bottom,transparent,var(--lavender-dark) 20%,var(--lavender-dark) 80%,transparent)}
+
+/* Regalos / Lluvia de sobres - peach tint */
+#regalos{background:linear-gradient(160deg,#FAF8F5 0%,#FBF0EA 50%,#FAF8F5 100%)}
+
+/* RSVP section - sky tint */
+#rsvp{background:linear-gradient(160deg,#FAF8F5 0%,#EEF4FA 50%,#FAF8F5 100%)}
+.rsvp-field input:focus,.rsvp-field select:focus,.rsvp-field textarea:focus{border-color:var(--sky-dark)}
+
+/* Gallery section - sage tint */
+#galeria{background:linear-gradient(160deg,#FAF8F5 0%,#EFF5EF 50%,#FAF8F5 100%)}
+.fw-hub{border-color:var(--sage-dark)}
+.fw-spoke{background:linear-gradient(to bottom,var(--sage),transparent)}
+
+/* Eyebrow labels - multi-color per section */
+#fecha .eyebrow{color:var(--peach-dark)}
+#countdown .eyebrow{color:var(--sky-dark)}
+#quote .eyebrow{color:var(--lavender-dark)}
+#familiares .eyebrow{color:var(--lavender-dark)}
+#galeria .eyebrow{color:var(--sage-dark)}
+#regalos .eyebrow{color:var(--peach-dark)}
+#rsvp .eyebrow{color:var(--sky-dark)}
+#album .eyebrow{color:var(--rose)}
+
+/* Hero gradient overlay - rose */
+.hero-veil{background:linear-gradient(to bottom,rgba(250,248,245,0) 15%,rgba(245,236,234,.45) 55%,var(--bg) 100%)}
+
+/* Dress code section - peach/warm */
+#dresscode{background:linear-gradient(to bottom,var(--bg) 0%,#FBF0EA 14%,#FBF0EA 86%,var(--bg) 100%)}
+#dresscode .eyebrow{color:var(--peach-dark)}
+#dresscode .script-title{color:var(--peach-dark)}
+
+/* Album section - sky */
+#album{background:linear-gradient(to bottom,var(--bg) 0%,#EEF4FA 14%,#EEF4FA 86%,var(--bg) 100%)}
+.qr-label{color:var(--sky-dark)}
+.album-note{color:var(--sky-dark)}
+
+/* Footer */
+#footer{background:linear-gradient(160deg,#FAF8F5 0%,#F5ECEA 100%)}
+.footer-date{color:var(--rose)}
+
+/* ── BACKGROUND DECORATIONS ── */
+#bg-decor{
+  position:fixed;inset:0;z-index:0;
+  pointer-events:none;overflow:hidden;
+}
+.bg-rose{
+  position:absolute;
+  opacity:0.045;
+}
+/* Floating hearts scattered */
+#bg-decor::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle 1.5px at 15% 20%,var(--rose) 100%,transparent 0),
+    radial-gradient(circle 1px  at 78% 15%,var(--peach-dark) 100%,transparent 0),
+    radial-gradient(circle 1.5px at 90% 45%,var(--sky-dark) 100%,transparent 0),
+    radial-gradient(circle 1px  at 25% 70%,var(--lavender-dark) 100%,transparent 0),
+    radial-gradient(circle 1.5px at 60% 85%,var(--rose) 100%,transparent 0),
+    radial-gradient(circle 1px  at 5%  55%,var(--sage-dark) 100%,transparent 0),
+    radial-gradient(circle 2px  at 50% 10%,var(--peach-dark) 100%,transparent 0),
+    radial-gradient(circle 1px  at 85% 75%,var(--lavender-dark) 100%,transparent 0);
+  opacity:0.35;
+}
+
+/* Section backgrounds get rose/floral via pseudo */
+.sec::before,.sec--bg::before,.sec--surface::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Ccircle cx='60' cy='55' r='4' fill='%23CFA0B2' opacity='.07'/%3E%3Cpath d='M60 51 C60 51 52 44 52 38 C52 32 60 30 60 30 C60 30 68 32 68 38 C68 44 60 51 60 51Z' fill='%23CFA0B2' opacity='.05'/%3E%3Cpath d='M56 50 C50 48 44 42 46 36 C48 30 56 30 60 34 C64 30 72 30 74 36 C76 42 70 48 64 50' fill='%23CFA0B2' opacity='.04'/%3E%3C/svg%3E");
+  background-size:120px 120px;
+  opacity:.5;
+  pointer-events:none;
+}
+
+/* ── EXTRA ORNAMENT VARIANTS ── */
+.ornament--peach svg{stroke:var(--peach-dark);fill:var(--peach-dark)}
+.ornament--sky svg{stroke:var(--sky-dark);fill:var(--sky-dark)}
+.ornament--lavender svg{stroke:var(--lavender-dark);fill:var(--lavender-dark)}
+
+/* Fancy divider with flowers */
+.ornament-fancy{
+  display:flex;justify-content:center;align-items:center;
+  padding:12px 0;
+  background:var(--bg);
+  gap:8px;
+}
+.ornament-fancy--surface{background:var(--surface)}
 </style>
 </head>
 <body>
@@ -1462,6 +1701,32 @@ body{
     </svg>
   </div>
 
+
+  <!-- ── ORNAMENTO FANCY ── -->
+  <div class="ornament ornament--b2s rv">
+    <svg viewBox="0 0 400 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="20" y1="40" x2="140" y2="40" stroke="#CFA0B2" stroke-width="1" opacity=".3"/>
+      <line x1="260" y1="40" x2="380" y2="40" stroke="#CFA0B2" stroke-width="1" opacity=".3"/>
+      <!-- Center rose motif -->
+      <path d="M200 60 C185 48 165 44 155 32 C145 20 155 10 165 14 C173 17 178 24 180 26 C182 24 187 17 195 14 C205 10 215 20 205 32 C195 44 215 48 200 60Z" stroke="#CFA0B2" stroke-width="1.2" fill="none" opacity=".55"/>
+      <circle cx="200" cy="28" r="5" stroke="#CFA0B2" stroke-width=".9" fill="none" opacity=".45"/>
+      <circle cx="200" cy="28" r="2.5" fill="#CFA0B2" opacity=".22"/>
+      <!-- Small flowers -->
+      <path d="M155 40 C155 40 151 36 151 32 C151 28 155 27 155 27 C155 27 159 28 159 32 C159 36 155 40 155 40Z" stroke="#F5C8B0" stroke-width=".9" fill="none" opacity=".5"/>
+      <path d="M245 40 C245 40 241 36 241 32 C241 28 245 27 245 27 C245 27 249 28 249 32 C249 36 245 40 245 40Z" stroke="#A8C4E8" stroke-width=".9" fill="none" opacity=".5"/>
+      <!-- Leaves -->
+      <path d="M148 44 C140 40 136 32 142 26" stroke="#AACAAA" stroke-width=".9" fill="none" opacity=".45"/>
+      <path d="M252 44 C260 40 264 32 258 26" stroke="#AACAAA" stroke-width=".9" fill="none" opacity=".45"/>
+      <!-- Dots trail -->
+      <circle cx="100" cy="40" r="1.8" fill="#CFA0B2" opacity=".3"/>
+      <circle cx="80" cy="40" r="1.3" fill="#F5C8B0" opacity=".28"/>
+      <circle cx="60" cy="40" r="1" fill="#C8B8DC" opacity=".25"/>
+      <circle cx="300" cy="40" r="1.8" fill="#CFA0B2" opacity=".3"/>
+      <circle cx="320" cy="40" r="1.3" fill="#A8C4E8" opacity=".28"/>
+      <circle cx="340" cy="40" r="1" fill="#AACAAA" opacity=".25"/>
+    </svg>
+  </div>
+
   <!-- ── 15. RSVP ── -->
   <section id="rsvp" class="sec sec--bg">
     <p class="eyebrow rv">Confirma tu Asistencia</p>
@@ -1553,109 +1818,67 @@ function initLoader(){
   );
 }
 
-/* ─────────────── ENVELOPE OPENING SEQUENCE ─────────────── */
-function initEnvelope(){
-  const envScreen = document.getElementById('envelope-screen');
-  const envImage  = document.getElementById('envImage');
-  const envVideo  = document.getElementById('envVideo');
-  const envTap    = document.getElementById('envTap');
-  const envFlash  = document.getElementById('env-flash');
-  const mainWrap  = document.querySelector('.wrap');
 
-  let tapped      = false;
-  let flashStarted = false;
-  let finished    = false;
+/* ─────────────── INTRO SCREEN ─────────────── */
+function initIntro(){
+  var screen  = document.getElementById('intro-screen');
+  var tag     = document.getElementById('isTag');
+  var mono    = document.getElementById('isMono');
+  var line    = document.getElementById('isLine');
+  var names   = document.getElementById('isNames');
+  var date    = document.getElementById('isDate');
+  var tap     = document.getElementById('isTap');
+  var tl      = document.getElementById('isTL');
+  var tr      = document.getElementById('isTR');
+  var bl      = document.getElementById('isBL');
+  var br      = document.getElementById('isBR');
+  var tapped  = false;
 
-  /* Entrada: fade-in de la imagen del sobre, luego aparece el prompt de tap */
-  gsap.fromTo(envImage,
-    { opacity: 0 },
-    { opacity: 1, duration: 1.4, ease: 'power2.out' }
-  );
-  gsap.fromTo(envTap,
-    { opacity: 0, y: 8 },
-    { opacity: 1, y: 0, duration: .9, delay: 1.2, ease: 'power2.out' }
-  );
+  if(!screen) return;
+
+  var corners = [tl, tr, bl, br];
+
+  /* Animate corners in */
+  var tl2 = gsap.timeline();
+  corners.forEach(function(c, i){
+    tl2.to(c, { opacity:1, duration:1.2, ease:'power2.out' }, i * 0.18);
+  });
+
+  /* Sequential text entrance */
+  var seq = gsap.timeline({ delay: 0.5 });
+  seq
+    .fromTo(tag,   { opacity:0, y:10 }, { opacity:1, y:0, duration:.8, ease:'power2.out' }, 0)
+    .fromTo(mono,  { opacity:0, y:22, scale:.94 }, { opacity:1, y:0, scale:1, duration:1.1, ease:'power3.out' }, 0.5)
+    .fromTo(line,  { opacity:0, scaleX:.4 }, { opacity:1, scaleX:1, duration:.7, ease:'power2.out' }, 1.3)
+    .fromTo(names, { opacity:0, y:8 }, { opacity:1, y:0, duration:.8, ease:'power2.out' }, 1.5)
+    .fromTo(date,  { opacity:0 }, { opacity:1, duration:.7, ease:'power2.out' }, 2.0)
+    .fromTo(tap,   { opacity:0, y:10 }, { opacity:1, y:0, duration:.9, ease:'power2.out' }, 2.5);
 
   function onTap(e){
     if (tapped) return;
     tapped = true;
     e.preventDefault();
 
-    /* Ocultar prompt */
-    gsap.to(envTap, { opacity: 0, duration: .3 });
-
-    /* Arrancar video */
-    envVideo.currentTime = 0;
-    envVideo.play().catch(() => {});
-
-    /* Registrar listeners de fin de video */
-    envVideo.addEventListener('timeupdate', checkFlash);
-    envVideo.addEventListener('ended',      onVideoEnd);
-
-    /* Esperar frame real: currentTime avanza solo cuando hay píxeles reales pintados.
-       Mientras tanto la imagen sigue visible al 100% → sin flash blanco.        */
-    let crossed = false;
-    function waitFrame(){
-      if (crossed) return;
-      if (envVideo.currentTime > 0){
-        crossed = true;
-        gsap.to(envImage, {
-          opacity: 0, duration: .55, ease: 'power2.out',
-          onComplete(){ envImage.style.display = 'none'; }
-        });
-        gsap.to(envVideo, {
-          opacity: 1, duration: .55, ease: 'power2.out'
-        });
-      } else {
-        requestAnimationFrame(waitFrame);
+    gsap.to([tag, mono, line, names, date, tap], {
+      opacity:0, y:-14, stagger:.06, duration:.55, ease:'power2.in'
+    });
+    corners.forEach(function(c, i){
+      gsap.to(c, { opacity:0, duration:.5, delay: i * 0.05 });
+    });
+    gsap.to(screen, {
+      opacity:0, duration:.9, delay:.4, ease:'power2.in',
+      onComplete: function(){
+        screen.style.display = 'none';
+        document.querySelector('.wrap').style.visibility = 'visible';
+        initAll();
       }
-    }
-    requestAnimationFrame(waitFrame);
-  }
-
-  function checkFlash(){
-    if (flashStarted) return;
-    if (!isFinite(envVideo.duration)) return;
-    if (envVideo.currentTime >= envVideo.duration - 2){
-      startFlash(1.6);
-    }
-  }
-
-  function onVideoEnd(){
-    if (flashStarted) return;
-    startFlash(.5);
-  }
-
-  function startFlash(dur){
-    flashStarted = true;
-    gsap.to(envFlash, {
-      opacity: 1, duration: dur, ease: 'power2.in',
-      onComplete: finishSequence
     });
   }
 
-  function finishSequence(){
-    if (finished) return;
-    finished = true;
-
-    /* Ocultar pantalla del sobre bajo el flash */
-    envScreen.style.display = 'none';
-    /* Revelar la invitación (aún cubierta por el flash blanco) */
-    mainWrap.style.visibility = 'visible';
-
-    /* Disparar animaciones del hero y scroll reveals */
-    initAll();
-
-    /* Disolver el flash lentamente, revelando la invitación */
-    gsap.to(envFlash, {
-      opacity: 0, duration: 1.2, ease: 'power2.out',
-      onComplete(){ envFlash.style.display = 'none'; }
-    });
-  }
-
-  envScreen.addEventListener('click', onTap, { passive: false });
-  envScreen.addEventListener('touchstart', onTap, { passive: false });
+  screen.addEventListener('click',      onTap, { passive:false });
+  screen.addEventListener('touchstart', onTap, { passive:false });
 }
+
 
 /* ─────────────── PÉTALOS ─────────────── */
 (function initPetals(){
@@ -1929,7 +2152,7 @@ function initAll(){
 }
 
 /* ─────────────── ARRANCAR CON EL SOBRE ─────────────── */
-initEnvelope();
+initIntro();
 </script>
 </body>
 </html>
