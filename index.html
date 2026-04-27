@@ -843,6 +843,8 @@ body{
 .music-fab{
   position:fixed;
   bottom:24px;right:24px;
+  transform:translateZ(0);
+  will-change:transform;
   width:56px;height:56px;
   border-radius:50%;
   background:var(--accent);
@@ -1252,6 +1254,52 @@ body{
   gap:8px;
 }
 .ornament-fancy--surface{background:var(--surface)}
+
+/* ── MAP EMBED ── */
+.map-embed-wrap{
+  width:100%;max-width:420px;margin:20px auto 16px;
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 4px 20px rgba(154,96,112,.18);
+  aspect-ratio:4/3;
+}
+.map-embed{
+  width:100%;height:100%;border:none;display:block;
+}
+
+/* ── ITINERARY PENDING ── */
+.itin-dot--pending{
+  background:transparent;
+  border:1.5px dashed var(--rose);
+  opacity:.5;
+}
+.itin-pending{opacity:.55;}
+.itin-evt-pending{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:14px;
+  color:var(--accent);
+  letter-spacing:2px;
+}
+
+/* ── DRESSCODE PENDING ── */
+.dc-pending-wrap{
+  display:flex;flex-direction:column;align-items:center;
+  gap:12px;padding:32px 0 24px;
+}
+.dc-pending-icon{opacity:.75;}
+.dc-pending-title{
+  font-family:'Great Vibes',cursive;
+  font-size:36px;
+  color:var(--dark);
+}
+.dc-pending-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:16px;
+  color:var(--accent);
+  text-align:center;
+  line-height:1.7;
+}
 @keyframes isShimmer{0%{left:-100%}60%,100%{left:130%}}
 </style>
 </head>
@@ -1343,7 +1391,7 @@ body{
 
   <div style="display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;position:relative;z-index:2;padding:0 32px;">
     <div id="isTag" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;letter-spacing:7px;text-transform:uppercase;color:#CFA0B2;opacity:0;margin-bottom:4px;">22 &middot; Mayo &middot; 2026</div>
-    <div id="isMono" style="font-family:'Great Vibes',cursive;font-size:clamp(88px,24vw,116px);line-height:1;background:linear-gradient(135deg,#9A6070 0%,#CFA0B2 30%,#8B6EAA 60%,#9A6070 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;opacity:0;">V &amp; J</div>
+    <div id="isMono" style="font-family:'Great Vibes',cursive;font-size:clamp(80px,22vw,110px);line-height:1.15;padding:0.05em 0.45em;background:linear-gradient(135deg,#9A6070 0%,#CFA0B2 30%,#8B6EAA 60%,#9A6070 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;opacity:0;">V &amp; J</div>
     <div id="isLine" style="display:flex;align-items:center;gap:12px;opacity:0;margin:6px 0;">
       <span style="display:block;width:42px;height:1px;background:linear-gradient(to right,transparent,#CFA0B2);"></span>
       <span style="display:block;width:5px;height:5px;border-radius:50%;background:#CFA0B2;opacity:.75;"></span>
@@ -1492,13 +1540,18 @@ body{
     <h2 class="script-title rv">Ubicación</h2>
     <div class="loc-card rv">
       <div class="loc-name">Grand Venue</div>
-      <div class="loc-sub">Ceremonia &amp; Recepción</div>
-      <div class="loc-hours">
-        19:00 hrs &mdash; Ceremonia<br>
-        20:00 hrs &mdash; Recepción
+      <div class="loc-sub">Recepción</div>
+      <div class="loc-hours">17:00 hrs &mdash; 23:00 hrs</div>
+      <div class="map-embed-wrap rv">
+        <iframe
+          class="map-embed"
+          src="https://maps.google.com/maps?q=Grand+Venue+Mexico&output=embed&hl=es"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
-      <div class="loc-city">Recepci&oacute;n</div>
-      <a href="https://www.google.com/maps/search/?api=1&query=Ex+Hacienda+San+Gabriel+de+las+Palmas+Amacuzac+Morelos"
+      <a href="https://maps.app.goo.gl/1TpiuNVPfYvfhxAJ9"
          target="_blank" rel="noopener" class="btn-map">
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
         Ver en Google Maps
@@ -1562,42 +1615,34 @@ body{
     <div class="itin-grid" id="itinGrid">
       <div class="itin-spine"></div>
 
-      <!-- 19:00 — izquierda -->
       <div class="itin-item itin-row-l">
-        <div class="itin-time">19:00</div>
-        <div class="itin-evt">Bienvenida y Ceremonia Civil</div>
+        <div class="itin-time">17:00</div>
+        <div class="itin-evt">Recepción</div>
       </div>
       <div class="itin-dot-col"><div class="itin-dot"></div></div>
       <div></div>
 
-      <!-- 19:45 — derecha -->
       <div></div>
-      <div class="itin-dot-col"><div class="itin-dot"></div></div>
-      <div class="itin-item itin-item--r itin-row-r">
-        <div class="itin-time">19:45</div>
-        <div class="itin-evt">Cóctel de Bienvenida</div>
+      <div class="itin-dot-col"><div class="itin-dot itin-dot--pending"></div></div>
+      <div class="itin-item itin-item--r itin-row-r itin-pending">
+        <div class="itin-evt-pending">Próximamente</div>
       </div>
 
-      <!-- 20:30 — izquierda -->
-      <div class="itin-item itin-row-l">
-        <div class="itin-time">20:30</div>
-        <div class="itin-evt">Cena y Brindis</div>
+      <div class="itin-item itin-row-l itin-pending">
+        <div class="itin-evt-pending">Próximamente</div>
       </div>
-      <div class="itin-dot-col"><div class="itin-dot"></div></div>
+      <div class="itin-dot-col"><div class="itin-dot itin-dot--pending"></div></div>
       <div></div>
 
-      <!-- 22:00 — derecha -->
       <div></div>
-      <div class="itin-dot-col"><div class="itin-dot"></div></div>
-      <div class="itin-item itin-item--r itin-row-r">
-        <div class="itin-time">22:00</div>
-        <div class="itin-evt">Vals y Baile</div>
+      <div class="itin-dot-col"><div class="itin-dot itin-dot--pending"></div></div>
+      <div class="itin-item itin-item--r itin-row-r itin-pending">
+        <div class="itin-evt-pending">Próximamente</div>
       </div>
 
-      <!-- 23:00 — izquierda -->
       <div class="itin-item itin-row-l">
         <div class="itin-time">23:00</div>
-        <div class="itin-evt">¡Fiesta!</div>
+        <div class="itin-evt">Fin</div>
       </div>
       <div class="itin-dot-col"><div class="itin-dot"></div></div>
       <div></div>
@@ -1638,41 +1683,18 @@ body{
   <section id="dresscode" class="sec sec--surface">
     <p class="eyebrow rv">Etiqueta</p>
     <h2 class="script-title rv">Dress Code</h2>
-    <p class="dc-subtitle rv">Semi-Formal &middot; Jardín</p>
-    <p class="dc-note rv">¡Queremos que se sientan cómodos y hermosos en el jardín!</p>
-
-    <div class="dc-cols">
-      <div class="dc-col rv">
-        <div class="dc-col-ttl">Para Ellas</div>
-        <ul class="dc-list">
-          <li>Vestidos de cóctel o largos</li>
-          <li>Encaje, chifón o estampados sutiles</li>
-          <li>Zapato bajo o plataforma (para el pasto)</li>
-        </ul>
+    <div class="dc-pending-wrap rv">
+      <div class="dc-pending-icon">
+        <svg viewBox="0 0 60 60" fill="none" width="56" height="56">
+          <circle cx="30" cy="30" r="28" stroke="#CFA0B2" stroke-width="1.2" opacity=".4"/>
+          <path d="M20 38 C20 38 22 28 30 26 C38 24 40 32 40 32" stroke="#CFA0B2" stroke-width="1.4" fill="none" opacity=".7"/>
+          <path d="M24 30 C24 24 30 20 36 22" stroke="#F5C8B0" stroke-width="1.2" fill="none" opacity=".6"/>
+          <circle cx="30" cy="30" r="3" fill="#CFA0B2" opacity=".5"/>
+        </svg>
       </div>
-      <div class="dc-col rv">
-        <div class="dc-col-ttl">Para Ellos</div>
-        <ul class="dc-list">
-          <li>Traje o pantalón y saco</li>
-          <li>Sin corbata</li>
-          <li>Camisa de lino o algodón</li>
-          <li>Mocasines o zapatos de vestir</li>
-        </ul>
-      </div>
+      <p class="dc-pending-title">Próximamente</p>
+      <p class="dc-pending-sub">Pronto compartiremos todos los detalles<br>del código de vestimenta.</p>
     </div>
-
-    <div class="dc-swatches" id="dcSwatches">
-      <div class="dc-sw"><div class="dc-sw-c" style="background:#C4919B"></div><span class="dc-sw-n">Dusty Rose</span></div>
-      <div class="dc-sw"><div class="dc-sw-c" style="background:#8FA888"></div><span class="dc-sw-n">Sage Green</span></div>
-      <div class="dc-sw"><div class="dc-sw-c" style="background:#7B92AA"></div><span class="dc-sw-n">Slate Blue</span></div>
-      <div class="dc-sw"><div class="dc-sw-c" style="background:#C9A84C"></div><span class="dc-sw-n">Mustard</span></div>
-      <div class="dc-sw"><div class="dc-sw-c" style="background:#E0907A"></div><span class="dc-sw-n">Soft Coral</span></div>
-      <div class="dc-sw"><div class="dc-sw-c" style="background:#C47055"></div><span class="dc-sw-n">Terracotta</span></div>
-      <div class="dc-sw"><div class="dc-sw-c" style="background:#2D4A6B"></div><span class="dc-sw-n">Navy Blue</span></div>
-      <div class="dc-sw"><div class="dc-sw-c" style="background:#B09EC0"></div><span class="dc-sw-n">Lavender</span></div>
-    </div>
-
-    <p class="dc-avoid rv">Evitar: Blanco &middot; Beige &middot; Rojo &mdash; reservados para los novios</p>
 
     <div class="no-kids rv">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a7 7 0 0 1 13 0"/><line x1="18" y1="3" x2="21" y2="6"/><line x1="21" y1="3" x2="18" y2="6"/></svg>
@@ -1687,17 +1709,29 @@ body{
     <div class="fw-scene rv" id="fwScene">
       <div class="fw-wheel" id="fwWheel">
         <div class="fw-spoke" style="transform:rotate(0deg)"></div>
+        <div class="fw-spoke" style="transform:rotate(60deg)"></div>
         <div class="fw-spoke" style="transform:rotate(120deg)"></div>
+        <div class="fw-spoke" style="transform:rotate(180deg)"></div>
         <div class="fw-spoke" style="transform:rotate(240deg)"></div>
+        <div class="fw-spoke" style="transform:rotate(300deg)"></div>
         <div class="fw-hub"></div>
-        <div class="fw-item" data-angle="270" data-src="foto1.jpg">
-          <img src="foto1.jpg" alt="Valerie &amp; Joseph">
+        <div class="fw-item" data-angle="270" data-src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=500&q=80">
+          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=500&q=80" alt="Boda">
         </div>
-        <div class="fw-item" data-angle="30" data-src="foto2.jpg">
-          <img src="foto2.jpg" alt="Valerie &amp; Joseph">
+        <div class="fw-item" data-angle="330" data-src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=500&q=80">
+          <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=500&q=80" alt="Boda">
         </div>
-        <div class="fw-item" data-angle="150" data-src="foto3.jpg">
-          <img src="foto3.jpg" alt="Valerie &amp; Joseph">
+        <div class="fw-item" data-angle="30" data-src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500&q=80">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500&q=80" alt="Boda">
+        </div>
+        <div class="fw-item" data-angle="90" data-src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=500&q=80">
+          <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=500&q=80" alt="Boda">
+        </div>
+        <div class="fw-item" data-angle="150" data-src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=500&q=80">
+          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=500&q=80" alt="Boda">
+        </div>
+        <div class="fw-item" data-angle="210" data-src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=500&q=80">
+          <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=500&q=80" alt="Boda">
         </div>
       </div>
     </div>
