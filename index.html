@@ -648,6 +648,25 @@ body{
   font-size:13px;letter-spacing:2px;text-transform:uppercase;
   color:var(--accent);opacity:.7;margin:0 0 18px;text-align:center;
 }
+.rsvp-counter{
+  display:flex;align-items:center;justify-content:center;gap:20px;
+  margin-top:8px;
+}
+.rsvp-counter-btn{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--accent);color:#fff;border:none;
+  font-size:22px;line-height:1;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  box-shadow:0 3px 10px rgba(154,96,112,.3);
+  transition:background .2s;
+}
+.rsvp-counter-btn:hover{background:var(--dark);}
+#rsvpGuestCount{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;font-weight:600;color:var(--dark);min-width:24px;text-align:center;
+}
+.carousel-img-clickable{cursor:zoom-in;}
 .rsvp-card{
   background:var(--card);
   border-radius:20px;
@@ -1755,8 +1774,7 @@ body{
   <!-- ── 6. FRASE ROMÁNTICA ── -->
   <section id="quote" class="sec sec--surface">
     <p class="quote-txt rv">
-      &ldquo;No fue casualidad, fue el universo conspirando;<br>
-      lo más hermoso de mi vida empezó cuando te encontré.&rdquo;
+      &ldquo;El amor es paciente, bondadoso y verdadero. No es egoísta, ni orgulloso; todo lo soporta, todo lo cree, todo lo espera y todo lo perdona. El amor nunca deja de ser.&rdquo;<br><small style="font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:2px;opacity:.65;">1 Corintios 13: 4-8</small>
     </p>
     <span class="quote-sig rv">Azucena &amp; Matthew</span>
   </section>
@@ -1796,18 +1814,18 @@ body{
     <p class="eyebrow rv">Dónde Celebramos</p>
     <h2 class="script-title rv">Ubicación</h2>
     <div class="loc-card rv">
-      <div class="loc-name">The Garden Room</div>
-      <div class="loc-sub">Recepción</div>
+      <div class="loc-name">Grand Venue</div>
+      <div class="loc-sub">The Garden Room &middot; Recepción</div>
       <div class="loc-hours">17:00 hrs &mdash; 23:00 hrs</div>
 
       <!-- Carrusel del salón -->
       <div class="salon-carousel-wrap rv">
         <div class="salon-carousel" id="salonCarousel">
-          <div class="salon-slide"><img src="salon1.jpeg" loading="lazy" alt="The Garden Room"></div>
-          <div class="salon-slide"><img src="salon2.jpeg" loading="lazy" alt="The Garden Room"></div>
-          <div class="salon-slide"><img src="salon3.jpeg" loading="lazy" alt="The Garden Room"></div>
-          <div class="salon-slide"><img src="salon4.jpeg" loading="lazy" alt="The Garden Room"></div>
-          <div class="salon-slide"><img src="salon5.jpeg" loading="lazy" alt="The Garden Room"></div>
+          <div class="salon-slide"><img src="salon1.jpeg" loading="lazy" alt="The Garden Room" class="carousel-img-clickable" onclick="openLightbox(this.src,this.alt)"></div>
+          <div class="salon-slide"><img src="salon2.jpeg" loading="lazy" alt="The Garden Room" class="carousel-img-clickable" onclick="openLightbox(this.src,this.alt)"></div>
+          <div class="salon-slide"><img src="salon3.jpeg" loading="lazy" alt="The Garden Room" class="carousel-img-clickable" onclick="openLightbox(this.src,this.alt)"></div>
+          <div class="salon-slide"><img src="salon4.jpeg" loading="lazy" alt="The Garden Room" class="carousel-img-clickable" onclick="openLightbox(this.src,this.alt)"></div>
+          <div class="salon-slide"><img src="salon5.jpeg" loading="lazy" alt="The Garden Room" class="carousel-img-clickable" onclick="openLightbox(this.src,this.alt)"></div>
         </div>
         <div class="salon-dots" id="salonDots">
           <button class="sd active" onclick="goSalonSlide(0)"></button>
@@ -1821,7 +1839,7 @@ body{
       <div class="map-embed-wrap rv">
         <iframe
           class="map-embed"
-          src="https://maps.google.com/maps?q=The+Garden+Room+Long+Beach+CA&z=17&output=embed&hl=es"
+          src="https://maps.google.com/maps?q=4101+E+Willow+St+Long+Beach+CA+90815&z=17&output=embed&hl=es"
           loading="lazy"
           allowfullscreen
           referrerpolicy="no-referrer-when-downgrade">
@@ -1862,12 +1880,12 @@ body{
     <div class="hotel-card rv">
       <div class="hotel-carousel-wrap">
         <div class="hotel-carousel" id="hotelCarousel">
-          <div class="hotel-slide"><img src="hotel1.jpeg" loading="lazy" alt="Residence Inn Long Beach"/></div>
-          <div class="hotel-slide"><img src="hotel2.jpeg" loading="lazy" alt="Residence Inn Long Beach"/></div>
-          <div class="hotel-slide"><img src="hotel3.jpeg" loading="lazy" alt="Residence Inn Long Beach"/></div>
-          <div class="hotel-slide"><img src="hotel4.avif" loading="lazy" alt="Residence Inn Long Beach"/></div>
-          <div class="hotel-slide"><img src="hotel5.jpg" loading="lazy" alt="Residence Inn Long Beach"/></div>
-          <div class="hotel-slide"><img src="hotel6.jpg" loading="lazy" alt="Residence Inn Long Beach"/></div>
+          <div class="hotel-slide"><img src="hotel1.jpeg" loading="lazy" alt="Residence Inn Long Beach" class="carousel-img-clickable" onclick="openLightbox(this.src,this.alt)"/></div>
+          <div class="hotel-slide"><img src="hotel2.jpeg" loading="lazy" alt="Residence Inn Long Beach" class="carousel-img-clickable" onclick="openLightbox(this.src,this.alt)"/></div>
+          <div class="hotel-slide"><img src="hotel3.jpeg" loading="lazy" alt="Residence Inn Long Beach" class="carousel-img-clickable" onclick="openLightbox(this.src,this.alt)"/></div>
+          <div class="hotel-slide"><img src="hotel4.avif" loading="lazy" alt="Residence Inn Long Beach" class="carousel-img-clickable" onclick="openLightbox(this.src,this.alt)"/></div>
+          <div class="hotel-slide"><img src="hotel5.jpg" loading="lazy" alt="Residence Inn Long Beach" class="carousel-img-clickable" onclick="openLightbox(this.src,this.alt)"/></div>
+          <div class="hotel-slide"><img src="hotel6.jpg" loading="lazy" alt="Residence Inn Long Beach" class="carousel-img-clickable" onclick="openLightbox(this.src,this.alt)"/></div>
         </div>
         <div class="hotel-dots" id="hotelDots">
           <button class="hd active" data-idx="0"></button>
@@ -2202,10 +2220,21 @@ body{
   <section id="rsvp" class="sec sec--bg">
     <p class="eyebrow rv">Confirma tu Asistencia</p>
     <h2 class="script-title rv">R.S.V.P.</h2>
-    <p class="rsvp-note rv">Fecha límite: 20 de mayo de 2026</p>
+    <p class="rsvp-note rv">Fecha límite: 13 de mayo de 2026</p>
 
     <div class="rsvp-card rv" id="rsvpCard">
-      <p class="rsvp-passes-label" id="rsvpPassesLabel"></p>
+      <div class="rsvp-field">
+        <label>Número de acompañantes</label>
+        <div class="rsvp-counter">
+          <button type="button" class="rsvp-counter-btn" id="rsvpMinus" onclick="changeGuests(-1)">−</button>
+          <span id="rsvpGuestCount">0</span>
+          <button type="button" class="rsvp-counter-btn" id="rsvpPlus" onclick="changeGuests(1)">+</button>
+        </div>
+      </div>
+      <div class="rsvp-field">
+        <label for="rsvpName0">Tu nombre completo</label>
+        <input type="text" id="rsvpName0" placeholder="Tu nombre completo" autocomplete="name">
+      </div>
       <div id="rsvpNamesWrap"></div>
       <div class="rsvp-field">
         <label for="rsvpAttend">¿Asistirán?</label>
@@ -2441,37 +2470,31 @@ function initIntro(){
 })();
 
 /* ─────────────── RSVP → WHATSAPP ─────────────── */
-/* ── RSVP dinámico por pases ── */
-(function(){
-  const params = new URLSearchParams(window.location.search);
-  const pases  = Math.min(Math.max(parseInt(params.get('pases')) || 1, 1), 5);
-  const label  = document.getElementById('rsvpPassesLabel');
-  const wrap   = document.getElementById('rsvpNamesWrap');
-  if(label) label.textContent = pases === 1 ? '1 pase' : pases + ' pases';
-  if(wrap){
-    const labels = ['Nombre completo','Nombre del acompañante 1','Nombre del acompañante 2','Nombre del acompañante 3','Nombre del acompañante 4'];
-    for(let i=0;i<pases;i++){
-      const div = document.createElement('div');
-      div.className = 'rsvp-field';
-      div.innerHTML = `<label for="rsvpName${i}">${labels[i]}</label><input type="text" id="rsvpName${i}" placeholder="${labels[i]}" autocomplete="${i===0?'name':'off'}">`;
-      wrap.appendChild(div);
-    }
+/* ── RSVP contador de acompañantes ── */
+var _guests = 0;
+function changeGuests(delta){
+  _guests = Math.min(Math.max(_guests + delta, 0), 4);
+  document.getElementById('rsvpGuestCount').textContent = _guests;
+  var wrap = document.getElementById('rsvpNamesWrap');
+  wrap.innerHTML = '';
+  for(var i=1; i<=_guests; i++){
+    var div = document.createElement('div');
+    div.className = 'rsvp-field';
+    div.innerHTML = '<label for="rsvpGuest'+i+'">Nombre del acompañante '+i+'</label><input type="text" id="rsvpGuest'+i+'" placeholder="Nombre completo" autocomplete="off">';
+    wrap.appendChild(div);
   }
-})();
+}
 
 function sendRsvp(){
-  const params  = new URLSearchParams(window.location.search);
-  const pases   = Math.min(Math.max(parseInt(params.get('pases')) || 1, 1), 5);
-  const attend  = document.getElementById('rsvpAttend').value;
-  const message = document.getElementById('rsvpMsg').value.trim() || '—';
-  const names   = [];
-  for(let i=0;i<pases;i++){
-    const v = document.getElementById('rsvpName'+i);
-    names.push((v && v.value.trim()) || '(sin nombre)');
+  var name    = (document.getElementById('rsvpName0').value.trim()) || '(sin nombre)';
+  var attend  = document.getElementById('rsvpAttend').value;
+  var message = document.getElementById('rsvpMsg').value.trim() || '—';
+  var lines   = ['¡Hola Azucena & Matthew! 🌸','',`*Nombre:* ${name}`];
+  for(var i=1; i<=_guests; i++){
+    var g = document.getElementById('rsvpGuest'+i);
+    lines.push(`*Acompañante ${i}:* ${g ? g.value.trim() || '(sin nombre)' : '—'}`);
   }
-  const lines = ['¡Hola Azucena & Matthew! 🌸','',`*Pases:* ${pases}`,`*Asistencia:* ${attend}`];
-  names.forEach((n,i)=>lines.push(`*${i===0?'Nombre':'Acompañante '+(i)}:* ${n}`));
-  lines.push(`*Mensaje:* ${message}`);
+  lines.push(`*Asistencia:* ${attend}`, `*Mensaje:* ${message}`);
   window.open('https://wa.me/12135671823?text=' + encodeURIComponent(lines.join('\n')), '_blank');
 }
 
