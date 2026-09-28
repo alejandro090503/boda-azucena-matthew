@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover">
-<title>Azucena &amp; Matthew · 22 Mayo 2026</title>
-<meta name="description" content="Azucena & Matthew se casan. Acompáñanos a celebrar nuestro amor el 22 de Mayo 2026 · Abre tu invitación 💌">
+<title>Azucena &amp; Matthew · 30 Octubre 2026</title>
+<meta name="description" content="Azucena & Matthew se casan. Acompáñanos a celebrar nuestro amor el 30 de Octubre 2026 · Abre tu invitación 💌">
 <meta property="og:type"        content="website">
 <meta property="og:url"         content="https://boda-azucena-matthew.vercel.app/">
-<meta property="og:title"       content="💌 Azucena &amp; Matthew · 22 · Mayo · 2026">
-<meta property="og:description" content="Azucena & Matthew se casan. Acompáñanos a celebrar nuestro amor el 22 de Mayo 2026 · Abre tu invitación ✉️">
+<meta property="og:title"       content="💌 Azucena &amp; Matthew · 30 · Octubre · 2026">
+<meta property="og:description" content="Azucena & Matthew se casan. Acompáñanos a celebrar nuestro amor el 30 de Octubre 2026 · Abre tu invitación ✉️">
 <meta property="og:image"       content="https://boda-azucena-matthew.vercel.app/portada.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="800">
 <meta property="og:locale"      content="es_MX">
 <meta name="twitter:card"        content="summary_large_image">
-<meta name="twitter:title"       content="💌 Azucena &amp; Matthew · 22 · Mayo · 2026">
-<meta name="twitter:description" content="Azucena & Matthew se casan. Acompáñanos a celebrar nuestro amor el 22 de Mayo 2026 ✉️">
+<meta name="twitter:title"       content="💌 Azucena &amp; Matthew · 30 · Octubre · 2026">
+<meta name="twitter:description" content="Azucena & Matthew se casan. Acompáñanos a celebrar nuestro amor el 30 de Octubre 2026 ✉️">
 <meta name="twitter:image"       content="https://boda-azucena-matthew.vercel.app/portada.jpg">
 <script>if('scrollRestoration' in history){history.scrollRestoration='manual';}window.scrollTo(0,0);</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -667,6 +667,24 @@ body{
   font-size:28px;font-weight:600;color:var(--dark);min-width:24px;text-align:center;
 }
 .carousel-img-clickable{cursor:zoom-in;}
+/* ── RSVP integración panel QR ── */
+#rsvpGreeting{max-width:520px;margin:0 auto 22px}
+.rsvp-greeting{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--dark);text-align:center;margin-bottom:4px}
+.rsvp-passes{font-family:'Lato',sans-serif;font-weight:300;font-size:14px;color:var(--text);opacity:.75;text-align:center}
+.rsvp-feedback{margin-top:14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;line-height:1.6;text-align:center;color:var(--accent)}
+#qrSection{max-width:520px;margin:40px auto 0}
+.rsvp-qr-title{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--dark);text-align:center;margin-bottom:6px}
+.rsvp-qr-hint{font-family:'Lato',sans-serif;font-weight:300;font-size:13px;color:var(--text);opacity:.7;text-align:center;line-height:1.7;margin-bottom:26px}
+.rsvp-qr-grid{display:flex;flex-direction:column;gap:16px;align-items:center}
+.rsvp-qr-card{background:var(--card);border:1px solid rgba(207,160,178,.28);border-radius:18px;padding:24px 20px;text-align:center;width:100%;max-width:300px;box-shadow:0 4px 24px rgba(154,96,112,.08)}
+.rsvp-qr-card .qr-img{background:#fff;padding:10px;border-radius:12px;display:inline-block;line-height:0}
+.rsvp-qr-card .qr-img canvas{display:block;width:180px;height:180px}
+.rsvp-qr-name{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);margin-top:14px}
+.rsvp-qr-mesa{font-family:'Lato',sans-serif;font-weight:400;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-top:4px}
+.rsvp-qr-code-lbl{font-family:'Lato',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);opacity:.7;margin-top:12px}
+.rsvp-qr-code-txt{font-family:'Courier New',monospace;font-size:14px;letter-spacing:2px;color:var(--dark);margin-top:4px;user-select:all;-webkit-user-select:all}
+.rsvp-qr-dl{display:inline-flex;align-items:center;gap:7px;margin-top:14px;padding:9px 22px;background:transparent;border:1.5px solid rgba(207,160,178,.5);border-radius:9px;color:var(--dark);font-family:'Lato',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.rsvp-qr-dl:hover{background:var(--surface)}
 .rsvp-card{
   background:var(--card);
   border-radius:20px;
@@ -1586,7 +1604,7 @@ body{
   <div class="ld-mono" id="ldMono">
     <span>V</span><span>&nbsp;</span><span>&amp;</span><span>&nbsp;</span><span>J</span>
   </div>
-  <p class="ld-tag" id="ldTag">Nos casamos &middot; 22 Mayo 2026</p>
+  <p class="ld-tag" id="ldTag">Nos casamos &middot; 30 Octubre 2026</p>
 </div>
 
 <!-- ═══════════════════════════════════════════ PÉTALOS -->
@@ -1666,7 +1684,7 @@ body{
   </svg>
 
   <div style="display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;position:relative;z-index:2;padding:0 32px;">
-    <div id="isTag" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;letter-spacing:7px;text-transform:uppercase;color:#CFA0B2;opacity:0;margin-bottom:4px;">22 &middot; Mayo &middot; 2026</div>
+    <div id="isTag" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;letter-spacing:7px;text-transform:uppercase;color:#CFA0B2;opacity:0;margin-bottom:4px;">30 &middot; Octubre &middot; 2026</div>
     <div id="isMono" style="font-family:'Cinzel',serif;font-weight:600;font-size:clamp(72px,18vw,96px);line-height:1.15;letter-spacing:6px;padding:0.05em 0.25em;background:linear-gradient(135deg,#9A6070 0%,#CFA0B2 30%,#8B6EAA 60%,#9A6070 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;opacity:0;">A &amp; M</div>
     <div id="isLine" style="display:flex;align-items:center;gap:12px;opacity:0;margin:6px 0;">
       <span style="display:block;width:42px;height:1px;background:linear-gradient(to right,transparent,#CFA0B2);"></span>
@@ -1741,7 +1759,7 @@ body{
       <p class="fecha-label">Viernes</p>
       <div class="fecha-row">
         <span class="fecha-rule fecha-rule--l"></span>
-        <span class="fecha-main">22 &middot; Mayo &middot; 2026</span>
+        <span class="fecha-main">30 &middot; Octubre &middot; 2026</span>
         <span class="fecha-rule fecha-rule--r"></span>
       </div>
       <div class="fecha-vline"></div>
@@ -1855,7 +1873,7 @@ body{
     <!-- Calendario integrado dentro de Ubicación -->
     <div class="loc-cal-divider rv"></div>
     <p class="loc-cal-eyebrow rv">Agenda el día especial</p>
-    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Azucena+%26+Matthew&dates=20260522T230000Z/20260523T050000Z&details=Recepci%C3%B3n+17%3A00-23%3A00+hrs+The+Garden+Room&location=The+Garden+Room+Long+Beach+CA"
+    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Azucena+%26+Matthew&dates=20261030T230000Z/20261031T050000Z&details=Recepci%C3%B3n+17%3A00-23%3A00+hrs+The+Garden+Room&location=The+Garden+Room+Long+Beach+CA"
        target="_blank" rel="noopener" class="btn-cal rv">
       <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.89 4 3 4.9 3 6v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v10zM7 11h5v5H7z"/></svg>
       Guardar en Mi Calendario
@@ -2220,44 +2238,55 @@ body{
   <section id="rsvp" class="sec sec--bg">
     <p class="eyebrow rv">Confirma tu Asistencia</p>
     <h2 class="script-title rv">R.S.V.P.</h2>
-    <p class="rsvp-note rv">Fecha límite: 13 de mayo de 2026</p>
+    <p class="rsvp-note rv">Fecha límite: 15 de octubre de 2026</p>
+
+    <div id="rsvpGreeting" class="rv"></div>
 
     <div class="rsvp-card rv" id="rsvpCard">
       <div class="rsvp-field">
-        <label>Número de acompañantes</label>
-        <div class="rsvp-counter">
-          <button type="button" class="rsvp-counter-btn" id="rsvpMinus" onclick="changeGuests(-1)">−</button>
-          <span id="rsvpGuestCount">0</span>
-          <button type="button" class="rsvp-counter-btn" id="rsvpPlus" onclick="changeGuests(1)">+</button>
-        </div>
-      </div>
-      <div class="rsvp-field">
-        <label for="rsvpName0">Tu nombre completo</label>
-        <input type="text" id="rsvpName0" placeholder="Tu nombre completo" autocomplete="name">
-      </div>
-      <div id="rsvpNamesWrap"></div>
-      <div class="rsvp-field">
         <label for="rsvpAttend">¿Asistirán?</label>
         <select id="rsvpAttend">
-          <option value="Sí, con gusto 🌸">Sí, con gusto 🌸</option>
-          <option value="Lo siento, no podremos">Lo siento, no podremos</option>
+          <option value="si">Sí, con gusto 🌸</option>
+          <option value="no">Lo siento, no podremos</option>
         </select>
+      </div>
+      <div id="rsvpAsistBlock">
+        <div class="rsvp-field">
+          <label>Número de acompañantes</label>
+          <div class="rsvp-counter">
+            <button type="button" class="rsvp-counter-btn" id="rsvpMinus" onclick="changeGuests(-1)">−</button>
+            <span id="rsvpGuestCount">0</span>
+            <button type="button" class="rsvp-counter-btn" id="rsvpPlus" onclick="changeGuests(1)">+</button>
+          </div>
+        </div>
+        <div class="rsvp-field">
+          <label for="rsvpName0">Tu nombre completo</label>
+          <input type="text" id="rsvpName0" placeholder="Tu nombre completo" autocomplete="name">
+        </div>
+        <div id="rsvpNamesWrap"></div>
       </div>
       <div class="rsvp-field">
         <label for="rsvpMsg">Mensaje para los novios</label>
         <textarea id="rsvpMsg" placeholder="Escribe algo especial para Azucena &amp; Matthew…"></textarea>
       </div>
-      <button class="btn-wa" onclick="sendRsvp()">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.165-.008-.35-.01-.534-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.559 4.122 1.535 5.858L0 24l6.335-1.513A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.795 9.795 0 0 1-5.003-1.374l-.359-.213-3.724.889.923-3.614-.234-.373A9.773 9.773 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-        Confirmar por WhatsApp
+      <button class="btn-wa" id="rsvpBtn" onclick="sendRsvp()">
+        <span id="rsvpBtnText">Confirmar asistencia</span>
       </button>
+      <p id="rsvpFeedback" class="rsvp-feedback" style="display:none"></p>
+    </div>
+
+    <!-- Códigos de acceso QR (aparecen al confirmar) -->
+    <div id="qrSection" class="rv" style="display:none">
+      <p class="rsvp-qr-title">Sus códigos de acceso</p>
+      <p class="rsvp-qr-hint">Presenten su código QR el día de la boda.<br>Pueden mostrarlo desde el celular o descargarlo.</p>
+      <div class="rsvp-qr-grid" id="qrGrid"></div>
     </div>
   </section>
 
   <!-- ── 16. FOOTER ── -->
   <footer id="footer">
     <div class="footer-names rv">Azucena &amp; Matthew</div>
-    <div class="footer-date rv">22 &middot; Mayo &middot; 2026</div>
+    <div class="footer-date rv">30 &middot; Octubre &middot; 2026</div>
     <div class="footer-hr"></div>
     <a href="https://www.instagram.com/elysium.invitaciones" target="_blank" rel="noopener" class="footer-credit">@elysium.invitaciones</a>
   </footer>
@@ -2279,6 +2308,8 @@ body{
 <!-- ── SCRIPTS ── -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+<!-- QR codes (códigos de acceso) — 1.5.1 es la última versión con bundle UMD en el CDN -->
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
 <script>
 /* ─────────────── INIT ─────────────── */
 history.scrollRestoration = 'manual';
@@ -2416,7 +2447,7 @@ function initIntro(){
 
 /* ─────────────── COUNTDOWN ─────────────── */
 (function initCountdown(){
-  const TARGET = new Date('2026-05-22T17:00:00-06:00').getTime();
+  const TARGET = new Date('2026-10-30T17:00:00-06:00').getTime();
   const pad = (n, w = 2) => String(n).padStart(w, '0');
 
   function tick(){
@@ -2488,10 +2519,94 @@ function closeLightbox(){
   setTimeout(function(){ if(img) img.src = ''; }, 400);
 }
 
-/* ── RSVP contador de acompañantes ── */
+/* ── RSVP · INTEGRACIÓN PANEL QR (patrón estándar) ── */
+var PANEL_API = 'https://panel-invitados-qr.vercel.app/api/confirmar';
+var RSVP_URL  = 'https://boda-azucena-matthew.vercel.app';
+var RSVP_DEADLINE = new Date(2026, 9, 15, 23, 59, 59, 999); // 15 octubre 2026 (fallback)
+var _rsvpDeadline = RSVP_DEADLINE;              // fecha límite efectiva (la del panel la sobrescribe)
+var _rsvpActiveLabel = 'Confirmar asistencia';  // texto del botón cuando el form está abierto
+var _invitacionAnulada = false;                 // true si el organizador borró esta invitación en el panel
+
+var _rsvpParams = new URLSearchParams(location.search);
+var _urlPara   = (_rsvpParams.get('para') || '').trim();
+var _rawPases  = parseInt(_rsvpParams.get('pases') || '1', 10);
+var _pasesAsignados = (isNaN(_rawPases) || _rawPases < 1 || _rawPases > 20) ? 1 : _rawPases;
+var _savedNames = [];
 var _guests = 0;
+
+function _escHtml(s){ var d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+function _rsvpFeedback(msg, color){
+  var f=document.getElementById('rsvpFeedback'); if(!f) return;
+  f.style.display='block'; f.style.color=color||'var(--accent)'; f.textContent=msg;
+}
+function _setBtnText(t){ var el=document.getElementById('rsvpBtnText'); if(el) el.textContent=t; }
+
+/* Fecha límite: formato es-MX largo y parseo tolerante (fin de día local) */
+function _fmtDeadline(d){
+  return d.toLocaleDateString('es-MX', { day:'numeric', month:'long', year:'numeric' });
+}
+function _parseDeadline(str){
+  if(!str) return null;
+  // Solo fecha (sin hora) → fin de día LOCAL. Un ISO completo con zona
+  // horaria se parsea tal cual (recortarlo movería el límite un día).
+  var m = String(str).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if(m) return new Date(+m[1], +m[2]-1, +m[3], 23, 59, 59, 999);
+  var d = new Date(str);
+  return isNaN(d.getTime()) ? null : d;
+}
+function _freezeRsvp(){
+  var card = document.getElementById('rsvpCard');
+  if(card) card.querySelectorAll('input,select,textarea,button').forEach(function(el){ el.disabled = true; });
+  _setBtnText('Fecha límite alcanzada');
+}
+/* Congela o reabre el form según la fecha límite efectiva */
+function _applyRsvpDeadline(){
+  if(_invitacionAnulada) return; // invitación borrada: permanece bloqueada
+  if(Date.now() > _rsvpDeadline.getTime()){
+    _freezeRsvp();
+    _rsvpFeedback('La fecha para confirmar asistencia ha pasado.');
+  } else {
+    var card = document.getElementById('rsvpCard');
+    if(card) card.querySelectorAll('input,select,textarea,button').forEach(function(el){ el.disabled = false; });
+    _setBtnText(_rsvpActiveLabel);
+    var f = document.getElementById('rsvpFeedback');
+    if(f && f.textContent === 'La fecha para confirmar asistencia ha pasado.'){ f.style.display='none'; f.textContent=''; }
+  }
+}
+/* La invitación fue borrada del panel: se desactiva de forma definitiva */
+function _invitacionNoDisponible(){
+  _invitacionAnulada = true;
+  var card = document.getElementById('rsvpCard');
+  if(card) card.querySelectorAll('input,select,textarea,button').forEach(function(el){ el.disabled = true; });
+  _setBtnText('Invitación no disponible');
+  _rsvpFeedback('Esta invitación ya no está disponible. Por favor contacten a los novios.', '#c0392b');
+  var sec = document.getElementById('qrSection');
+  if(sec) sec.style.display = 'none';
+}
+/* Confirmado pero aún sin QRs: mensaje dentro del contenedor de códigos */
+function _showQrsPending(){
+  var sec = document.getElementById('qrSection');
+  var grid = document.getElementById('qrGrid');
+  if(!sec || !grid) return;
+  grid.innerHTML = '';
+  var msg = document.createElement('p');
+  msg.className = 'rsvp-qr-hint';
+  msg.textContent = 'Sus códigos de acceso estarán disponibles cuando se acerque el evento. Vuelvan a esta página más adelante.';
+  grid.appendChild(msg);
+  sec.style.display = 'block';
+}
+
+function _paintGreeting(){
+  var g=document.getElementById('rsvpGreeting'); if(!g||!_urlPara) return;
+  g.innerHTML =
+    '<p class="rsvp-greeting">¡Hola, '+_escHtml(_urlPara)+'!</p>'+
+    '<p class="rsvp-passes">Tienen <strong>'+_pasesAsignados+'</strong> '+(_pasesAsignados>1?'pases asignados':'pase asignado')+'</p>';
+}
+
+/* contador de acompañantes (máx = pases - 1, el titular cuenta como 1) */
 function changeGuests(delta){
-  _guests = Math.min(Math.max(_guests + delta, 0), 4);
+  var max = Math.max(0, _pasesAsignados - 1);
+  _guests = Math.min(Math.max(_guests + delta, 0), max);
   document.getElementById('rsvpGuestCount').textContent = _guests;
   var wrap = document.getElementById('rsvpNamesWrap');
   wrap.innerHTML = '';
@@ -2501,19 +2616,188 @@ function changeGuests(delta){
     div.innerHTML = '<label for="rsvpGuest'+i+'">Nombre del acompañante '+i+'</label><input type="text" id="rsvpGuest'+i+'" placeholder="Nombre completo" autocomplete="off">';
     wrap.appendChild(div);
   }
+  // repuebla los nombres guardados (savedNames[0] = titular)
+  for(var j=1; j<=_guests; j++){
+    var inp = document.getElementById('rsvpGuest'+j);
+    if(inp && _savedNames[j]) inp.value = _savedNames[j];
+  }
 }
 
-function sendRsvp(){
-  var name    = (document.getElementById('rsvpName0').value.trim()) || '(sin nombre)';
-  var attend  = document.getElementById('rsvpAttend').value;
-  var message = document.getElementById('rsvpMsg').value.trim() || '—';
-  var lines   = ['¡Hola Azucena & Matthew! 🌸','',`*Nombre:* ${name}`];
+/* muestra/oculta el bloque de nombres según Sí/No */
+function _syncAttend(){
+  var attend = document.getElementById('rsvpAttend').value;
+  var block  = document.getElementById('rsvpAsistBlock');
+  if(block) block.style.display = (attend==='no') ? 'none' : 'block';
+}
+
+function _collectNames(){
+  var nombres = [];
+  var n0 = (document.getElementById('rsvpName0').value||'').trim();
+  if(n0) nombres.push(n0);
   for(var i=1; i<=_guests; i++){
     var g = document.getElementById('rsvpGuest'+i);
-    lines.push(`*Acompañante ${i}:* ${g ? g.value.trim() || '(sin nombre)' : '—'}`);
+    var v = g ? (g.value||'').trim() : '';
+    if(v) nombres.push(v);
   }
-  lines.push(`*Asistencia:* ${attend}`, `*Mensaje:* ${message}`);
-  window.open('https://wa.me/12135671823?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+  return nombres.slice(0, _pasesAsignados);
+}
+
+/* Pre-fill: d.pases del panel es autoritativo; guard silencioso si no hay registro */
+(function initRsvpPanel(){
+  document.getElementById('rsvpAttend').addEventListener('change', _syncAttend);
+  changeGuests(0);
+  _syncAttend();
+
+  if(_urlPara){
+    var n0 = document.getElementById('rsvpName0');
+    if(n0) n0.value = _urlPara;
+    _paintGreeting();
+    fetch(PANEL_API + '?nombre=' + encodeURIComponent(_urlPara) + '&url_boda=' + encodeURIComponent(RSVP_URL))
+      .then(function(r){ return r.json(); })
+      .then(function(resp){
+        var d = resp && resp.invitado;
+        if(!d){
+          // El server respondió pero esta invitación no existe (borrada del panel)
+          if(resp && resp.ok) _invitacionNoDisponible();
+          return;
+        }
+        if(typeof d.pases === 'number' && d.pases > 0 && d.pases <= 20){
+          _pasesAsignados = d.pases; _paintGreeting();
+        }
+        if(d.estado === 'confirmado' || d.estado === 'declino'){
+          if(d.nombres_confirmados && d.nombres_confirmados.length){
+            _savedNames = d.nombres_confirmados.slice();
+          }
+          if(d.estado === 'confirmado'){
+            document.getElementById('rsvpAttend').value = 'si';
+            _syncAttend();
+            if(document.getElementById('rsvpName0') && _savedNames[0]) document.getElementById('rsvpName0').value = _savedNames[0];
+            _guests = Math.max(0, _savedNames.length - 1);
+            changeGuests(0);
+            if(resp.qrs && resp.qrs.length) paintQrs(resp.qrs);
+            else _showQrsPending();
+          } else {
+            document.getElementById('rsvpAttend').value = 'no';
+            _syncAttend();
+            if(d.mensaje) document.getElementById('rsvpMsg').value = d.mensaje;
+          }
+          _rsvpActiveLabel = 'Actualizar respuesta';
+          _applyRsvpDeadline();
+          _rsvpFeedback(d.estado === 'confirmado'
+            ? '¡Ya tienen confirmada su asistencia! Pueden actualizar su respuesta.'
+            : 'Ya registramos que no podrán asistir. Pueden cambiar su respuesta.');
+        }
+      })
+      .catch(function(){});
+  }
+
+  _applyRsvpDeadline();
+
+  /* Fecha límite dinámica del panel: sobrescribe el fallback hardcodeado */
+  fetch(PANEL_API + '?solo_boda=1&url_boda=' + encodeURIComponent(RSVP_URL))
+    .then(function(r){ return r.json(); })
+    .then(function(resp){
+      var b = resp && resp.boda;
+      if(!b || !b.fecha_limite_rsvp) return;
+      var nd = _parseDeadline(b.fecha_limite_rsvp);
+      if(!nd) return;
+      _rsvpDeadline = nd;
+      var note = document.querySelector('.rsvp-note');
+      if(note) note.textContent = 'Fecha límite: ' + _fmtDeadline(nd);
+      _applyRsvpDeadline();
+    })
+    .catch(function(){});
+})();
+
+function sendRsvp(){
+  if(Date.now() > _rsvpDeadline.getTime()) return;
+  var attend = document.getElementById('rsvpAttend').value;
+  var choice = (attend === 'no') ? 'no' : 'yes';
+  var nombre = _urlPara || (document.getElementById('rsvpName0').value||'').trim();
+
+  if(!nombre){ _rsvpFeedback('Por favor escribe tu nombre.', '#c0392b'); return; }
+
+  var nombres = [];
+  if(choice === 'yes'){
+    nombres = _collectNames();
+    if(nombres.length === 0){ _rsvpFeedback('Por favor escribe al menos un nombre.', '#c0392b'); return; }
+  }
+
+  var btn = document.getElementById('rsvpBtn');
+  _setBtnText('Enviando…'); btn.disabled = true;
+
+  fetch(PANEL_API, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      nombre: nombre,
+      url_boda: RSVP_URL,
+      estado: choice === 'yes' ? 'confirmado' : 'declino',
+      pases: _pasesAsignados,
+      pases_confirmados: choice === 'yes' ? nombres.length : 0,
+      nombres_confirmados: nombres,
+      mensaje: choice === 'no'
+        ? ((document.getElementById('rsvpMsg').value||'').trim().slice(0,500))
+        : undefined
+    })
+  })
+  .then(function(r){ return r.json().then(function(d){ return { status: r.status, d: d }; }); })
+  .then(function(res){
+    var d = res.d;
+    btn.disabled = false;
+    if(res.status === 404 && d && (d.error === 'invitacion_no_disponible' || d.error === 'no_match')){
+      _invitacionNoDisponible();
+      return;
+    }
+    if(res.status === 403 && d && d.error === 'rsvp_cerrado'){
+      _rsvpFeedback('La fecha para confirmar asistencia ha pasado.', '#c0392b');
+      _freezeRsvp();
+      return;
+    }
+    if(!d || !d.ok){ _setBtnText('Confirmar asistencia'); _rsvpFeedback('No pudimos guardar. Intenta de nuevo.', '#c0392b'); return; }
+    _rsvpActiveLabel = 'Actualizar respuesta';
+    _setBtnText('Actualizar respuesta');
+    if(choice === 'yes'){
+      _rsvpFeedback('¡Su asistencia ha sido confirmada! Nos vemos pronto. 🌸', '#5A8A5A');
+      if(d.qrs && d.qrs.length) paintQrs(d.qrs);
+      else _showQrsPending();
+      setTimeout(function(){ document.getElementById('qrSection').scrollIntoView({behavior:'smooth',block:'nearest'}); }, 350);
+    } else {
+      _rsvpFeedback('Hemos registrado que no podrán asistir. ¡Gracias por avisarnos!');
+      document.getElementById('qrSection').style.display = 'none';
+    }
+  })
+  .catch(function(){ btn.disabled = false; _setBtnText('Confirmar asistencia'); _rsvpFeedback('Error de conexión. Intenta de nuevo.', '#c0392b'); });
+}
+
+/* ── QRs "Sus códigos de acceso" ── */
+function paintQrs(qrs){
+  var sec = document.getElementById('qrSection');
+  var grid = document.getElementById('qrGrid');
+  if(!sec || !grid || typeof QRCode === 'undefined') return;
+  grid.innerHTML = '';
+  qrs.forEach(function(q){
+    var card = document.createElement('div'); card.className = 'rsvp-qr-card';
+    var box = document.createElement('div'); box.className = 'qr-img';
+    var cv = document.createElement('canvas'); box.appendChild(cv); card.appendChild(box);
+    QRCode.toCanvas(cv, q.codigo, { width:180, margin:1, color:{ dark:'#2D1A20', light:'#FFFFFF' } }, function(){});
+    var nm = document.createElement('p'); nm.className = 'rsvp-qr-name'; nm.textContent = q.nombre_persona; card.appendChild(nm);
+    if(q.mesa){ var ms = document.createElement('p'); ms.className='rsvp-qr-mesa'; ms.textContent='Mesa '+q.mesa; card.appendChild(ms); }
+    var lbl = document.createElement('p'); lbl.className='rsvp-qr-code-lbl'; lbl.textContent='Código de respaldo'; card.appendChild(lbl);
+    var ct = document.createElement('p'); ct.className='rsvp-qr-code-txt'; ct.textContent=q.codigo; card.appendChild(ct);
+    var dl = document.createElement('button'); dl.type='button'; dl.className='rsvp-qr-dl'; dl.textContent='Descargar';
+    dl.addEventListener('click', function(){
+      QRCode.toDataURL(q.codigo, { width:1024, margin:2, color:{ dark:'#2D1A20', light:'#FFFFFF' } }, function(err, url){
+        if(err) return;
+        var a=document.createElement('a'); a.href=url;
+        a.download='qr-'+q.nombre_persona.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')+'.png';
+        a.click();
+      });
+    });
+    card.appendChild(dl);
+    grid.appendChild(card);
+  });
+  sec.style.display = 'block';
 }
 
 /* ─────────────── ANIMACIONES (post-loader) ─────────────── */
@@ -2752,5 +3036,33 @@ document.addEventListener('keydown', function(e){
     <p class="lluvia-modal-text">La lluvia de sobres es una costumbre en la que los invitados a un evento entregan dinero en efectivo, en un sobre, en lugar de un regalo.</p>
   </div>
 </div>
+<script>
+/* ELYSIUM AUDIO UNLOCK v1 — la musica se estrena DENTRO del primer gesto real del invitado.
+   iOS/Chrome retiran el permiso del gesto a los pocos ms, asi que un play() que corre al
+   terminar el video del sobre llega tarde y es rechazado en silencio. */
+(function(){
+  if(window.__elyAudioUnlock) return; window.__elyAudioUnlock=1;
+  var done=false, tries=0;
+  function A(){ return document.querySelector('audio'); }
+  function unlock(){
+    if(done) return;
+    var a=A(); if(!a) return;
+    try{ if(a.preload==='none'){ a.preload='auto'; a.load(); } }catch(e){}
+    if(!a.paused){ done=true; return; }
+    var p;
+    try{ p=a.play(); }catch(e){ return; }
+    if(p && p.then){ p.then(function(){ done=true; }).catch(function(){}); }
+    else { done=true; }
+  }
+  ['pointerdown','touchstart','touchend','click','keydown'].forEach(function(ev){
+    document.addEventListener(ev, unlock, {capture:true, passive:true});
+  });
+  var iv=setInterval(function(){
+    var a=A();
+    if(done || (a && !a.paused)){ done=true; clearInterval(iv); return; }
+    if(++tries>120) clearInterval(iv);
+  },1000);
+})();
+</script>
 </body>
 </html>
