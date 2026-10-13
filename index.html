@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover">
-<title>Azucena &amp; Matthew · 30 Octubre 2026</title>
-<meta name="description" content="Azucena & Matthew se casan. Acompáñanos a celebrar nuestro amor el 30 de Octubre 2026 · Abre tu invitación 💌">
+<title>Azucena &amp; Matthew · 12 Diciembre 2026</title>
+<meta name="description" content="Azucena & Matthew se casan. Acompáñanos a celebrar nuestro amor el 12 de Diciembre 2026 · Abre tu invitación 💌">
 <meta property="og:type"        content="website">
 <meta property="og:url"         content="https://boda-azucena-matthew.vercel.app/">
-<meta property="og:title"       content="💌 Azucena &amp; Matthew · 30 · Octubre · 2026">
-<meta property="og:description" content="Azucena & Matthew se casan. Acompáñanos a celebrar nuestro amor el 30 de Octubre 2026 · Abre tu invitación ✉️">
+<meta property="og:title"       content="💌 Azucena &amp; Matthew · 12 · Diciembre · 2026">
+<meta property="og:description" content="Azucena & Matthew se casan. Acompáñanos a celebrar nuestro amor el 12 de Diciembre 2026 · Abre tu invitación ✉️">
 <meta property="og:image"       content="https://boda-azucena-matthew.vercel.app/portada.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="800">
 <meta property="og:locale"      content="es_MX">
 <meta name="twitter:card"        content="summary_large_image">
-<meta name="twitter:title"       content="💌 Azucena &amp; Matthew · 30 · Octubre · 2026">
-<meta name="twitter:description" content="Azucena & Matthew se casan. Acompáñanos a celebrar nuestro amor el 30 de Octubre 2026 ✉️">
+<meta name="twitter:title"       content="💌 Azucena &amp; Matthew · 12 · Diciembre · 2026">
+<meta name="twitter:description" content="Azucena & Matthew se casan. Acompáñanos a celebrar nuestro amor el 12 de Diciembre 2026 ✉️">
 <meta name="twitter:image"       content="https://boda-azucena-matthew.vercel.app/portada.jpg">
 <script>if('scrollRestoration' in history){history.scrollRestoration='manual';}window.scrollTo(0,0);</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -675,16 +675,29 @@ body{
 #qrSection{max-width:520px;margin:40px auto 0}
 .rsvp-qr-title{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--dark);text-align:center;margin-bottom:6px}
 .rsvp-qr-hint{font-family:'Lato',sans-serif;font-weight:300;font-size:13px;color:var(--text);opacity:.7;text-align:center;line-height:1.7;margin-bottom:26px}
-.rsvp-qr-grid{display:flex;flex-direction:column;gap:16px;align-items:center}
-.rsvp-qr-card{background:var(--card);border:1px solid rgba(207,160,178,.28);border-radius:18px;padding:24px 20px;text-align:center;width:100%;max-width:300px;box-shadow:0 4px 24px rgba(154,96,112,.08)}
-.rsvp-qr-card .qr-img{background:#fff;padding:10px;border-radius:12px;display:inline-block;line-height:0}
-.rsvp-qr-card .qr-img canvas{display:block;width:180px;height:180px}
-.rsvp-qr-name{font-family:'Cormorant Garamond',serif;font-size:21px;color:var(--dark);margin-top:14px}
-.rsvp-qr-mesa{font-family:'Lato',sans-serif;font-weight:400;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-top:4px}
-.rsvp-qr-code-lbl{font-family:'Lato',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);opacity:.7;margin-top:12px}
-.rsvp-qr-code-txt{font-family:'Courier New',monospace;font-size:14px;letter-spacing:2px;color:var(--dark);margin-top:4px;user-select:all;-webkit-user-select:all}
-.rsvp-qr-dl{display:inline-flex;align-items:center;gap:7px;margin-top:14px;padding:9px 22px;background:transparent;border:1.5px solid rgba(207,160,178,.5);border-radius:9px;color:var(--dark);font-family:'Lato',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .2s}
+.qr-carousel{position:relative;max-width:360px;margin:0 auto}
+.rsvp-qr-grid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px 11% 14px;overscroll-behavior-x:contain}
+.rsvp-qr-grid::-webkit-scrollbar{display:none}
+.rsvp-qr-card{flex:0 0 78%;scroll-snap-align:center;background:var(--card);border:1px solid rgba(207,160,178,.28);border-radius:18px;padding:18px 14px 16px;text-align:center;box-shadow:0 4px 20px rgba(154,96,112,.09);transition:transform .35s ease,opacity .35s ease;transform:scale(.92);opacity:.55}
+.rsvp-qr-card.is-active{transform:none;opacity:1}
+.rsvp-qr-card .qr-img{background:#fff;padding:8px;border-radius:12px;display:inline-block;line-height:0}
+.rsvp-qr-card .qr-img canvas{display:block;width:150px;height:150px}
+.rsvp-qr-name{font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.25;color:var(--dark);margin-top:12px}
+.rsvp-qr-mesa{font-family:'Lato',sans-serif;font-weight:400;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-top:3px}
+.rsvp-qr-code-lbl{font-family:'Lato',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-top:10px}
+.rsvp-qr-code-lbl span{font-family:'Courier New',monospace;font-size:13px;letter-spacing:1.5px;text-transform:none;color:var(--dark);user-select:all;-webkit-user-select:all;display:block;margin-top:3px}
+.rsvp-qr-dl{display:inline-flex;align-items:center;gap:7px;margin-top:12px;padding:8px 20px;background:transparent;border:1.5px solid rgba(207,160,178,.5);border-radius:9px;color:var(--dark);font-family:'Lato',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:background .2s}
 .rsvp-qr-dl:hover{background:var(--surface)}
+.qr-nav{position:absolute;top:42%;transform:translateY(-50%);z-index:2;width:34px;height:34px;border-radius:50%;border:1px solid rgba(207,160,178,.45);background:var(--card);color:var(--dark);font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 2px 10px rgba(154,96,112,.12);transition:opacity .25s}
+.qr-nav--prev{left:-4px}.qr-nav--next{right:-4px}
+.qr-nav:disabled{opacity:0;pointer-events:none}
+.qr-foot{text-align:center;margin-top:2px}
+.qr-dots{display:flex;justify-content:center;gap:7px}
+.qr-dots button{width:7px;height:7px;padding:0;border:0;border-radius:4px;background:rgba(207,160,178,.4);cursor:pointer;transition:width .3s,background .3s}
+.qr-dots button.is-active{width:20px;background:var(--accent)}
+.qr-count{font-family:'Lato',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text);opacity:.6;margin-top:10px}
+.qr-carousel.is-single .qr-nav,.qr-foot.is-single{display:none}
+.qr-carousel.is-single .rsvp-qr-card{flex-basis:84%;transform:none;opacity:1}
 .rsvp-card{
   background:var(--card);
   border-radius:20px;
@@ -1604,7 +1617,7 @@ body{
   <div class="ld-mono" id="ldMono">
     <span>V</span><span>&nbsp;</span><span>&amp;</span><span>&nbsp;</span><span>J</span>
   </div>
-  <p class="ld-tag" id="ldTag">Nos casamos &middot; 30 Octubre 2026</p>
+  <p class="ld-tag" id="ldTag">Nos casamos &middot; 12 Diciembre 2026</p>
 </div>
 
 <!-- ═══════════════════════════════════════════ PÉTALOS -->
@@ -1684,7 +1697,7 @@ body{
   </svg>
 
   <div style="display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;position:relative;z-index:2;padding:0 32px;">
-    <div id="isTag" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;letter-spacing:7px;text-transform:uppercase;color:#CFA0B2;opacity:0;margin-bottom:4px;">30 &middot; Octubre &middot; 2026</div>
+    <div id="isTag" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;letter-spacing:7px;text-transform:uppercase;color:#CFA0B2;opacity:0;margin-bottom:4px;">12 &middot; Diciembre &middot; 2026</div>
     <div id="isMono" style="font-family:'Cinzel',serif;font-weight:600;font-size:clamp(72px,18vw,96px);line-height:1.15;letter-spacing:6px;padding:0.05em 0.25em;background:linear-gradient(135deg,#9A6070 0%,#CFA0B2 30%,#8B6EAA 60%,#9A6070 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;opacity:0;">A &amp; M</div>
     <div id="isLine" style="display:flex;align-items:center;gap:12px;opacity:0;margin:6px 0;">
       <span style="display:block;width:42px;height:1px;background:linear-gradient(to right,transparent,#CFA0B2);"></span>
@@ -1756,10 +1769,10 @@ body{
   <section id="fecha">
     <div class="fecha-block rv">
       <div class="fecha-vline"></div>
-      <p class="fecha-label">Viernes</p>
+      <p class="fecha-label">Sábado</p>
       <div class="fecha-row">
         <span class="fecha-rule fecha-rule--l"></span>
-        <span class="fecha-main">30 &middot; Octubre &middot; 2026</span>
+        <span class="fecha-main">12 &middot; Diciembre &middot; 2026</span>
         <span class="fecha-rule fecha-rule--r"></span>
       </div>
       <div class="fecha-vline"></div>
@@ -1873,7 +1886,7 @@ body{
     <!-- Calendario integrado dentro de Ubicación -->
     <div class="loc-cal-divider rv"></div>
     <p class="loc-cal-eyebrow rv">Agenda el día especial</p>
-    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Azucena+%26+Matthew&dates=20261030T230000Z/20261031T050000Z&details=Recepci%C3%B3n+17%3A00-23%3A00+hrs+The+Garden+Room&location=The+Garden+Room+Long+Beach+CA"
+    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Azucena+%26+Matthew&dates=20261212T230000Z/20261213T050000Z&details=Recepci%C3%B3n+17%3A00-23%3A00+hrs+The+Garden+Room&location=The+Garden+Room+Long+Beach+CA"
        target="_blank" rel="noopener" class="btn-cal rv">
       <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.89 4 3 4.9 3 6v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v10zM7 11h5v5H7z"/></svg>
       Guardar en Mi Calendario
@@ -2238,7 +2251,7 @@ body{
   <section id="rsvp" class="sec sec--bg">
     <p class="eyebrow rv">Confirma tu Asistencia</p>
     <h2 class="script-title rv">R.S.V.P.</h2>
-    <p class="rsvp-note rv">Fecha límite: 15 de octubre de 2026</p>
+    <p class="rsvp-note rv">Fecha límite: 13 de octubre de 2026</p>
 
     <div id="rsvpGreeting" class="rv"></div>
 
@@ -2278,15 +2291,24 @@ body{
     <!-- Códigos de acceso QR (aparecen al confirmar) -->
     <div id="qrSection" class="rv" style="display:none">
       <p class="rsvp-qr-title">Sus códigos de acceso</p>
-      <p class="rsvp-qr-hint">Presenten su código QR el día de la boda.<br>Pueden mostrarlo desde el celular o descargarlo.</p>
-      <div class="rsvp-qr-grid" id="qrGrid"></div>
+      <p class="rsvp-qr-hint" id="qrHint">Presenten su código QR el día de la boda.<br>Pueden mostrarlo desde el celular o descargarlo.</p>
+      <p class="rsvp-qr-hint" id="qrPending" style="display:none">Sus códigos de acceso estarán disponibles cuando se acerque el evento. Vuelvan a esta página más adelante.</p>
+      <div class="qr-carousel" id="qrCarousel">
+        <button type="button" class="qr-nav qr-nav--prev" id="qrPrev" aria-label="Código anterior">&#8249;</button>
+        <div class="rsvp-qr-grid" id="qrGrid"></div>
+        <button type="button" class="qr-nav qr-nav--next" id="qrNext" aria-label="Código siguiente">&#8250;</button>
+      </div>
+      <div class="qr-foot" id="qrFoot">
+        <div class="qr-dots" id="qrDots"></div>
+        <p class="qr-count" id="qrCount"></p>
+      </div>
     </div>
   </section>
 
   <!-- ── 16. FOOTER ── -->
   <footer id="footer">
     <div class="footer-names rv">Azucena &amp; Matthew</div>
-    <div class="footer-date rv">30 &middot; Octubre &middot; 2026</div>
+    <div class="footer-date rv">12 &middot; Diciembre &middot; 2026</div>
     <div class="footer-hr"></div>
     <a href="https://www.instagram.com/elysium.invitaciones" target="_blank" rel="noopener" class="footer-credit">@elysium.invitaciones</a>
   </footer>
@@ -2447,7 +2469,7 @@ function initIntro(){
 
 /* ─────────────── COUNTDOWN ─────────────── */
 (function initCountdown(){
-  const TARGET = new Date('2026-10-30T17:00:00-06:00').getTime();
+  const TARGET = new Date('2026-12-12T17:00:00-06:00').getTime();
   const pad = (n, w = 2) => String(n).padStart(w, '0');
 
   function tick(){
@@ -2522,7 +2544,7 @@ function closeLightbox(){
 /* ── RSVP · INTEGRACIÓN PANEL QR (patrón estándar) ── */
 var PANEL_API = 'https://panel-invitados-qr.vercel.app/api/confirmar';
 var RSVP_URL  = 'https://boda-azucena-matthew.vercel.app';
-var RSVP_DEADLINE = new Date(2026, 9, 15, 23, 59, 59, 999); // 15 octubre 2026 (fallback)
+var RSVP_DEADLINE = new Date(2026, 9, 13, 23, 59, 59, 999); // 13 octubre 2026 (fallback)
 var _rsvpDeadline = RSVP_DEADLINE;              // fecha límite efectiva (la del panel la sobrescribe)
 var _rsvpActiveLabel = 'Confirmar asistencia';  // texto del botón cuando el form está abierto
 var _invitacionAnulada = false;                 // true si el organizador borró esta invitación en el panel
@@ -2589,10 +2611,10 @@ function _showQrsPending(){
   var grid = document.getElementById('qrGrid');
   if(!sec || !grid) return;
   grid.innerHTML = '';
-  var msg = document.createElement('p');
-  msg.className = 'rsvp-qr-hint';
-  msg.textContent = 'Sus códigos de acceso estarán disponibles cuando se acerque el evento. Vuelvan a esta página más adelante.';
-  grid.appendChild(msg);
+  document.getElementById('qrPending').style.display = 'block';
+  document.getElementById('qrHint').style.display = 'none';
+  document.getElementById('qrCarousel').style.display = 'none';
+  document.getElementById('qrFoot').style.display = 'none';
   sec.style.display = 'block';
 }
 
@@ -2649,8 +2671,6 @@ function _collectNames(){
   _syncAttend();
 
   if(_urlPara){
-    var n0 = document.getElementById('rsvpName0');
-    if(n0) n0.value = _urlPara;
     _paintGreeting();
     fetch(PANEL_API + '?nombre=' + encodeURIComponent(_urlPara) + '&url_boda=' + encodeURIComponent(RSVP_URL))
       .then(function(r){ return r.json(); })
@@ -2770,21 +2790,53 @@ function sendRsvp(){
   .catch(function(){ btn.disabled = false; _setBtnText('Confirmar asistencia'); _rsvpFeedback('Error de conexión. Intenta de nuevo.', '#c0392b'); });
 }
 
-/* ── QRs "Sus códigos de acceso" ── */
+/* ── QRs "Sus códigos de acceso" (carrusel: uno a la vez, deslizando) ── */
+var _qrCards = [], _qrIdx = 0;
+function _qrIrA(i, suave){
+  var grid = document.getElementById('qrGrid');
+  var c = _qrCards[i]; if(!grid || !c) return;
+  grid.scrollTo({ left: c.offsetLeft - (grid.clientWidth - c.clientWidth) / 2, behavior: suave === false ? 'auto' : 'smooth' });
+}
+function _qrMarcar(){
+  var grid = document.getElementById('qrGrid'); if(!grid || !_qrCards.length) return;
+  var centro = grid.scrollLeft + grid.clientWidth / 2, mejor = 0, dist = Infinity;
+  _qrCards.forEach(function(c, i){
+    var d = Math.abs(c.offsetLeft + c.clientWidth / 2 - centro);
+    if(d < dist){ dist = d; mejor = i; }
+  });
+  _qrIdx = mejor;
+  _qrCards.forEach(function(c, i){ c.classList.toggle('is-active', i === mejor); });
+  var dots = document.getElementById('qrDots').children;
+  for(var k = 0; k < dots.length; k++) dots[k].classList.toggle('is-active', k === mejor);
+  document.getElementById('qrCount').textContent = 'Pase ' + (mejor + 1) + ' de ' + _qrCards.length;
+  document.getElementById('qrPrev').disabled = mejor === 0;
+  document.getElementById('qrNext').disabled = mejor === _qrCards.length - 1;
+}
+(function(){
+  var grid = document.getElementById('qrGrid'); if(!grid) return;
+  var raf = 0;
+  grid.addEventListener('scroll', function(){ if(raf) return; raf = requestAnimationFrame(function(){ raf = 0; _qrMarcar(); }); }, { passive:true });
+  document.getElementById('qrPrev').addEventListener('click', function(){ _qrIrA(Math.max(0, _qrIdx - 1)); });
+  document.getElementById('qrNext').addEventListener('click', function(){ _qrIrA(Math.min(_qrCards.length - 1, _qrIdx + 1)); });
+  window.addEventListener('resize', function(){ if(_qrCards.length) _qrIrA(_qrIdx, false); });
+})();
+
 function paintQrs(qrs){
   var sec = document.getElementById('qrSection');
   var grid = document.getElementById('qrGrid');
   if(!sec || !grid || typeof QRCode === 'undefined') return;
   grid.innerHTML = '';
-  qrs.forEach(function(q){
+  var dots = document.getElementById('qrDots'); dots.innerHTML = '';
+  _qrCards = [];
+  qrs.forEach(function(q, i){
     var card = document.createElement('div'); card.className = 'rsvp-qr-card';
     var box = document.createElement('div'); box.className = 'qr-img';
     var cv = document.createElement('canvas'); box.appendChild(cv); card.appendChild(box);
-    QRCode.toCanvas(cv, q.codigo, { width:180, margin:1, color:{ dark:'#2D1A20', light:'#FFFFFF' } }, function(){});
+    QRCode.toCanvas(cv, q.codigo, { width:150, margin:1, color:{ dark:'#2D1A20', light:'#FFFFFF' } }, function(){});
     var nm = document.createElement('p'); nm.className = 'rsvp-qr-name'; nm.textContent = q.nombre_persona; card.appendChild(nm);
     if(q.mesa){ var ms = document.createElement('p'); ms.className='rsvp-qr-mesa'; ms.textContent='Mesa '+q.mesa; card.appendChild(ms); }
-    var lbl = document.createElement('p'); lbl.className='rsvp-qr-code-lbl'; lbl.textContent='Código de respaldo'; card.appendChild(lbl);
-    var ct = document.createElement('p'); ct.className='rsvp-qr-code-txt'; ct.textContent=q.codigo; card.appendChild(ct);
+    var lbl = document.createElement('p'); lbl.className='rsvp-qr-code-lbl'; lbl.textContent='Código de respaldo';
+    var ct = document.createElement('span'); ct.textContent = q.codigo; lbl.appendChild(ct); card.appendChild(lbl);
     var dl = document.createElement('button'); dl.type='button'; dl.className='rsvp-qr-dl'; dl.textContent='Descargar';
     dl.addEventListener('click', function(){
       QRCode.toDataURL(q.codigo, { width:1024, margin:2, color:{ dark:'#2D1A20', light:'#FFFFFF' } }, function(err, url){
@@ -2795,9 +2847,24 @@ function paintQrs(qrs){
       });
     });
     card.appendChild(dl);
+    /* tocar una tarjeta lateral la trae al centro */
+    card.addEventListener('click', function(e){ if(i !== _qrIdx && e.target !== dl) _qrIrA(i); });
     grid.appendChild(card);
+    _qrCards.push(card);
+    var dot = document.createElement('button'); dot.type = 'button'; dot.setAttribute('aria-label', 'Ver código ' + (i + 1));
+    dot.addEventListener('click', function(){ _qrIrA(i); });
+    dots.appendChild(dot);
   });
+  var single = qrs.length < 2;
+  document.getElementById('qrCarousel').classList.toggle('is-single', single);
+  document.getElementById('qrFoot').classList.toggle('is-single', single);
+  document.getElementById('qrPending').style.display = 'none';
+  document.getElementById('qrHint').style.display = '';
+  document.getElementById('qrCarousel').style.display = '';
+  document.getElementById('qrFoot').style.display = '';
   sec.style.display = 'block';
+  _qrIdx = 0;
+  requestAnimationFrame(function(){ _qrIrA(0, false); _qrMarcar(); });
 }
 
 /* ─────────────── ANIMACIONES (post-loader) ─────────────── */
