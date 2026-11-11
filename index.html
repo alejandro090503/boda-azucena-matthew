@@ -2756,9 +2756,7 @@ function sendRsvp(){
       pases: _pasesAsignados,
       pases_confirmados: choice === 'yes' ? nombres.length : 0,
       nombres_confirmados: nombres,
-      mensaje: choice === 'no'
-        ? ((document.getElementById('rsvpMsg').value||'').trim().slice(0,500))
-        : undefined
+      mensaje: ((document.getElementById('rsvpMsg').value||'').trim().slice(0,500)) || undefined
     })
   })
   .then(function(r){ return r.json().then(function(d){ return { status: r.status, d: d }; }); })
